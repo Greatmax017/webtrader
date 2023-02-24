@@ -63,7 +63,7 @@
                                         
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>Account Password</strong></label>
-                                            <input type="password" name="password" class="form-control" value="Password">
+                                            <input type="password" name="password" class="form-control" value="">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
 <script src="vendor/global/global.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/deznav-init.js"></script>
-<script src="js/styleSwitcher.js"></script>
+
 </body>
 
 <!-- Mirrored from cryptozone.dexignzone.com/xhtml/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Dec 2022 23:29:23 GMT -->

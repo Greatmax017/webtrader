@@ -55,6 +55,12 @@
     						</a>
 
     					</li>
+						<li><a class=" " href="https://crm.neptunefx.net/" aria-expanded="false">
+    							<i class="material-icons">grid_view</i>
+    							<span class="nav-text">Client Area</span>
+    						</a>
+
+    					</li>
 
     					<li>
 
@@ -62,7 +68,7 @@
     						<a class="logout" aria-expanded="false">
     							<i class="bi bi-power"></i>
 
-    							<span @click="logout" class="nav-text">Logout</span>
+    							<span @click="logout()" class="nav-text">Logout</span>
     							<!-- <button type="submit">Logout</button> -->
 
 
@@ -121,8 +127,7 @@
 
     										</nav>
     										<!-- </div> -->
-    										<button class="btn d-flex btn d-flex " type="button"> {{ user.live === 1 ? 'Live' :
-    											'Demo' }} Account</button>
+    										<button class="btn d-flex btn d-flex " type="button"> {{accountType(user.live)}}</button>
     									</div>
     									<div class="card-body">
     										<!-- TradingView Widget BEGIN -->
@@ -196,7 +201,7 @@
     														</div>
     													</div>
     													<div class="sell-element">
-    														<form @submit.prevent="buyOrder">
+    														<form @submit.prevent="buyOrder()">
     															<div class="basic-form">
 
 
@@ -225,7 +230,7 @@
     																</div>
     																<div class="input-group">
     																	<input type="number" step="any"
-    																		v-on:change="validateVolume" v-model="volume"
+    																		v-on:change="validateVolume()" v-model="volume"
     																		class="form-control" placeholder="0.00" required>
     																	<span class="input-group-text">Lot</span>
     																</div>
@@ -235,7 +240,7 @@
     																<label class="form-label text-primary">Stop Loss</label>
     																<div class="input-group">
     																	<input type="number" v-model="stopLoss"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
     																</div>
@@ -244,7 +249,7 @@
     																<label class="form-label text-primary">Take Profit</label>
     																<div class="input-group">
     																	<input type="number" v-model="takeProfit"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
 
@@ -267,7 +272,7 @@
     																<button type="submit"
     																	class="btn btn-success w-40">BUY</button> &nbsp; &nbsp;
     																&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-    																	@click="sellOrder"
+    																	@click="sellOrder()"
     																	class="btn btn-danger w-40">Sell</a>
     															</div>
     														</form>
@@ -298,7 +303,7 @@
 
 
 														<div class="sell-element">
-    														<form @submit.prevent="pendingOrder">
+    														<form @submit.prevent="pendingOrder()">
     															<div class="basic-form">
 
 
@@ -329,7 +334,7 @@
 																	
     																<div class="input-group">
     																	<input type="number" step="any"
-    																		v-on:change="validateVolume" v-model="volume"
+    																		v-on:change="validateVolume()" v-model="volume"
     																		class="form-control" placeholder="0.00" required>
     																	<span class="input-group-text">Lot</span>
     																</div>
@@ -350,7 +355,7 @@
     																<label class="form-label text-primary">Stop Loss</label>
     																<div class="input-group">
     																	<input type="number" v-model="stopLoss"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
     																</div>
@@ -359,7 +364,7 @@
     																<label class="form-label text-primary">Take Profit</label>
     																<div class="input-group">
     																	<input type="number" v-model="takeProfit"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
 
@@ -382,7 +387,7 @@
     																<button type="submit"
     																	class="btn btn-success w-40">BUY</button> &nbsp; &nbsp;
     																&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-    																	@click="pendingSellOrder"
+    																	@click="pendingSellOrder()"
     																	class="btn btn-danger w-40">Sell</a>
     															</div>
     														</form>
@@ -461,7 +466,7 @@
     														</div>
     													</div>
     													<div class="sell-element">
-    														<form @submit.prevent="buyOrder">
+    														<form @submit.prevent="buyOrder()">
     															<div class="basic-form">
 
 
@@ -490,7 +495,7 @@
     																</div>
     																<div class="input-group">
     																	<input type="number" step="any"
-    																		v-on:change="validateVolume" v-model="volume"
+    																		v-on:change="validateVolume()" v-model="volume"
     																		class="form-control" placeholder="0.00" required>
     																	<span class="input-group-text">Lot</span>
     																</div>
@@ -500,7 +505,7 @@
     																<label class="form-label text-primary">Stop Loss</label>
     																<div class="input-group">
     																	<input type="number" v-model="stopLoss"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
     																</div>
@@ -509,7 +514,7 @@
     																<label class="form-label text-primary">Take Profit</label>
     																<div class="input-group">
     																	<input type="number" v-model="takeProfit"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
 
@@ -532,7 +537,7 @@
     																<button type="submit"
     																	class="btn btn-success w-40">BUY</button> &nbsp; &nbsp;
     																&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-    																	@click="sellOrder"
+    																	@click="sellOrder()"
     																	class="btn btn-danger w-40">Sell</a>
     															</div>
     														</form>
@@ -563,7 +568,7 @@
 
 
 														<div class="sell-element">
-    														<form @submit.prevent="pendingOrder">
+    														<form @submit.prevent="pendingOrder()">
     															<div class="basic-form">
 
 
@@ -594,7 +599,7 @@
 																	
     																<div class="input-group">
     																	<input type="number" step="any"
-    																		v-on:change="validateVolume" v-model="volume"
+    																		v-on:change="validateVolume()" v-model="volume"
     																		class="form-control" placeholder="0.00" required>
     																	<span class="input-group-text">Lot</span>
     																</div>
@@ -615,7 +620,7 @@
     																<label class="form-label text-primary">Stop Loss</label>
     																<div class="input-group">
     																	<input type="number" v-model="stopLoss"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
     																</div>
@@ -624,7 +629,7 @@
     																<label class="form-label text-primary">Take Profit</label>
     																<div class="input-group">
     																	<input type="number" v-model="takeProfit"
-    																		v-on:change="validateVolume" step="any"
+    																		v-on:change="validateVolume()" step="any"
     																		class="form-control" placeholder="0">
     																	<span class="input-group-text"></span>
 
@@ -647,7 +652,7 @@
     																<button type="submit"
     																	class="btn btn-success w-40">BUY</button> &nbsp; &nbsp;
     																&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
-    																	@click="pendingSellOrder"
+    																	@click="pendingSellOrder()"
     																	class="btn btn-danger w-40">Sell</a>
     															</div>
     														</form>
@@ -962,6 +967,15 @@ methods: {
 				console.log(error);
 			});
 	},
+	//end trade using tp and sl
+	checkForlevels() {
+    this.ongoingTrades.forEach((trade) => {
+      if (this.bid >= trade.tp) {
+        this.endTrade(trade.id);
+      }
+    });
+  },
+  
 
 	// format date
 	formatDate(dateString) {
@@ -1149,6 +1163,19 @@ methods: {
 		this.price = null;
 	},
 
+	//get account status
+	accountType(state){
+		let status = 'Demo Account';
+		if (state === 1){
+			status = 'Live Account';
+
+		}else {
+			status = 'Demo Account'
+		}
+		return status;
+
+	},
+
 	floatingProfit(volume, spread, commission, entryPrice, nominal, side) {
 		let difference = 0;
 
@@ -1271,7 +1298,7 @@ mounted() {
 	this.chartTheme();
 	$('#theme_version').on('change', this.handleChange);
 	
-	setInterval(this.priceFeeds, 5000);
+	setInterval(this.priceFeeds, 1000);
 
 	
 },

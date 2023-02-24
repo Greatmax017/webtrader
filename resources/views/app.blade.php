@@ -25,12 +25,13 @@
 	
 	<!-- Style css -->
     <link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="{{ asset('build/assets/app-7cd5d428.css') }}">
-	 <script src="{{ asset('build/assets/app-21ce4071.js') }}"></script>
+	{{-- <link rel="stylesheet" href="{{ asset('build/assets/app-7cd5d428.css') }}">
+	 <script src="{{ asset('build/assets/app-21ce4071.js') }}"></script> --}}
 
 
 
-   
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     @inertiaHead
   </head>
   <body>
@@ -63,7 +64,7 @@
     <script src="/js/custom.js"></script>
 	<script src="/js/deznav-init.js"></script>
 	<script src="/js/demo.js"></script>
-    <script src="/js/styleSwitcher.js"></script>
+
     {{-- <script src="/js/dashboard/tradingview-1.js"></script> --}}
 	</body>
 </html>

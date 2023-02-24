@@ -40,7 +40,7 @@ class TradeController extends Controller
 
     public function calendar(){
 
-        return view('Calendar');
+        return view('calendar');
     }
 
     public function buyOrder(Request $request){

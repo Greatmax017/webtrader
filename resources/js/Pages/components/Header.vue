@@ -8,29 +8,29 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Neptune Webtrader
+                                Neptune Web-Terminal
                             </div>
                         </div>
                         <div class="navbar-nav header-right">
 							
 							<div class="dz-side-menu">	
-								<div class="search-coundry d-flex align-items-center">
+								<!-- <div class="search-coundry d-flex align-items-center">
 									<img src="images/United.png" alt="">
 									<select class="default-select dashboard-select image-select">
 									  <option data-display="Eng">Eng</option>
 									  <option value="2">Af</option>
 									   <option value="2">Al</option>
 									</select>
-								</div>
+								</div> -->
 									
-								<ul>
+								<!-- <ul>
 									<li class="nav-item dropdown header-profile">
 										<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-											<img src="/images/profile/pic1.jpg" alt="">
+											<img src="" alt="">
 										</a>
 										
 									</li>
-								</ul>	
+								</ul>	 -->
 							</div>	
                         </div>
                     </div>
